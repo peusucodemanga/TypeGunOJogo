@@ -1,0 +1,14 @@
+body{
+    background-image: url('papelp.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+}
+button{
+    position: relative;
+    top: 380px;
+    left:590px;
+    background-color: #9c9c9c; 
+    color: rgb(0, 0, 0);
+}
