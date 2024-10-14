@@ -22,8 +22,8 @@ body{
     align-items: center;
     min-height: 100vh;
     flex-direction: row;
-    padding-left: 50px;
-    gap: 150px;
+    padding-left: 30px;
+    gap: 120px;
     font-size: x-large;
 
     }
@@ -37,7 +37,7 @@ body{
 }
 
 textarea {
-    background: transparent;
+    background: white;
     width: 280px;
     height: 430px;
     border: none;
