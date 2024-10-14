@@ -37,7 +37,7 @@ body{
 }
 
 textarea {
-    background: white;
+    background: transparent;
     width: 280px;
     height: 430px;
     border: none;
