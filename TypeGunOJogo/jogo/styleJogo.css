@@ -8,7 +8,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/images/bJogo.png');
+    background-image: url('/TypeGunOJogo/images/bJogo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -24,6 +24,7 @@ body{
     flex-direction: row;
     padding-left: 50px;
     gap: 150px;
+    font-size: x-large;
 
     }
     
@@ -45,5 +46,6 @@ textarea {
     font-family: "Bona Nova SC", serif;
     font-weight: 1000;
     font-style: normal;
+    font-size: x-large;
 
     }
