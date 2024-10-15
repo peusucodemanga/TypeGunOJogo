@@ -5,47 +5,48 @@
 }
 
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('/TypeGunOJogo/images/bJogo.png');
+    background-image: url('/TypeGunOJogo/images/backJogo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
 
     }
 
 .escreverTextoGeral{
-    display: flex;
-    justify-content: center;    
-    align-items: center;
+    display: flex;   
     min-height: 100vh;
-    flex-direction: row;
-    padding-left: 30px;
-    gap: 120px;
+    padding-top: 400px ;
+    gap: 30px;
     font-size: x-large;
 
     }
     
-.frasePraDigitar {
 
-    align-self: flex-start;
-    padding-top: 120px;
-
-
+.frasePraDigitar{
+    position: absolute;
+    left: 278px;
 }
 
+
 textarea {
-    background: transparent;
-    width: 280px;
-    height: 430px;
+    
+    position: absolute;
+    right: 290px;
+    background: transparent; 
+    width: 385px;
+    height: 222px;
     border: none;
     resize: none;
-    
+
+
     font-family: "Bona Nova SC", serif;
     font-weight: 1000;
     font-style: normal;
     font-size: x-large;
-
+    outline: 0px;
     }
