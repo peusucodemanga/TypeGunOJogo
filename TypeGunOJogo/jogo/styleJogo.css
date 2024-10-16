@@ -59,3 +59,11 @@ textarea {
     color: black;
     font-size: xxx-large;
 }
+
+.correto {
+    color: green;
+}
+
+.incorreto {
+    color: red
+}
