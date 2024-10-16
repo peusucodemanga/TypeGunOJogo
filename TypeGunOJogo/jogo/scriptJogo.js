@@ -2,26 +2,42 @@ const displayFrase = document.getElementById('frasePraDigitar')
 const inputConteudo = document.getElementById('entradaTexto')
 
 inputConteudo.addEventListener('input', () => {
+    const listaSpans = displayFrase.querySelectorAll('span')
     const digitadoNoInput = inputConteudo.value.split('')
-    const digitadoNoInputPalavras = inputConteudo.value.split(' ')
     const listaPalavrasDaFrase = displayFrase.innerText.split(' ')
+    const listaDigitadoNoInput = listaPalavrasDaFrase.map((x) => '')
+    const digitadoNoInputPalavras = (inputConteudo.value.split(' ')).filter((x) => x !== '')
+    digitadoNoInputPalavras.map((palavra, acc) => {
+        listaDigitadoNoInput[acc] = palavra
+        acc += 1
+    })
     if (digitadoNoInput[digitadoNoInput.length-1] == ' ') {
         listaPalavrasDaFrase.map((palavra, acc) => {
-            if (digitadoNoInputPalavras[acc] == null) {
-                console.log('ainda nao foi digitado')
+            const temClasse = listaSpans[acc].className
+            if (temClasse !== '') {
+                listaDigitadoNoInput[acc+1] = listaDigitadoNoInput[acc]
             }
-            else if (palavra === digitadoNoInputPalavras[acc]) {
-                console.log('correto')
+            else if (listaDigitadoNoInput[acc] == '') {
+                listaSpans[acc].classList.remove('correto')
+                listaSpans[acc].classList.remove('incorreto')
             }
-            else if (palavra !== digitadoNoInputPalavras[acc]) {console.log('incorreto')}
+            else if (palavra === listaDigitadoNoInput[acc]) {
+                listaSpans[acc].classList.add('correto')
+                listaSpans[acc].classList.remove('incorreto')
+            }
+            else if (palavra !== listaDigitadoNoInput[acc]) {
+                listaSpans[acc].classList.add('incorreto')
+                listaSpans[acc].classList.remove('correto')
+            }
         acc += 1
+        inputConteudo.value = null
         })
     }
 })
 
 const listaDeFrases = ['Depois que eu conheci o Mandela', 'Depois que eu vi como ela dança', 
     'Depois que eu vi como ela se assanha', 'Só agora que eu vim perceber', 'Namorar pra quê?',
-    'Se amarrar pra quê?', 'Prefiro estar solteiro que eu sei que elas \nvão querer']
+    'Se amarrar pra quê?', 'Prefiro estar solteiro que eu sei que elas vão querer']
 
 const sortearFrase = (max = -1, min = 7) => Math.floor(Math.random() * (max - min + 1)) + min
 
