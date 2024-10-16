@@ -1,6 +1,24 @@
 const displayFrase = document.getElementById('frasePraDigitar')
 const inputConteudo = document.getElementById('entradaTexto')
 
+inputConteudo.addEventListener('input', () => {
+    const digitadoNoInput = inputConteudo.value.split('')
+    const digitadoNoInputPalavras = inputConteudo.value.split(' ')
+    const listaPalavrasDaFrase = displayFrase.innerText.split(' ')
+    if (digitadoNoInput[digitadoNoInput.length-1] == ' ') {
+        listaPalavrasDaFrase.map((palavra, acc) => {
+            if (digitadoNoInputPalavras[acc] == null) {
+                console.log('ainda nao foi digitado')
+            }
+            else if (palavra === digitadoNoInputPalavras[acc]) {
+                console.log('correto')
+            }
+            else if (palavra !== digitadoNoInputPalavras[acc]) {console.log('incorreto')}
+        acc += 1
+        })
+    }
+})
+
 const listaDeFrases = ['Depois que eu conheci o Mandela', 'Depois que eu vi como ela dança', 
     'Depois que eu vi como ela se assanha', 'Só agora que eu vim perceber', 'Namorar pra quê?',
     'Se amarrar pra quê?', 'Prefiro estar solteiro que eu sei que elas \nvão querer']
@@ -20,3 +38,13 @@ function gerarNovaFrase() {
 }
 
 gerarNovaFrase()
+
+function contagemRegressiva(x) {
+    document.getElementById('relogio').textContent=x;
+    if (x > 0) {
+      setTimeout
+      (function() {
+        contagemRegressiva(x - 1)}, 1000);} 
+  }
+  
+contagemRegressiva(60)
