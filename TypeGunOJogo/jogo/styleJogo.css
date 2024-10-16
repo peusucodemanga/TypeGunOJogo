@@ -1,9 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-y: hidden;
-    overflow-x: hidden;
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+overflow-y: hidden;
+overflow-x: hidden;
 }
 
 body{
@@ -56,7 +55,7 @@ textarea {
 
 .relogioMenorQue9 {
     position: relative;
-    right: 41.6%;
+    right: 41%;
     top: 26%;
     
     
@@ -69,7 +68,7 @@ textarea {
 .relogioMaiorQue9 {
     display: flex;
     position: relative;
-    right: 41.6%;
+    right: 41.2%;
     top: 26%;
     
     
