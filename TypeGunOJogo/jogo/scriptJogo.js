@@ -1,5 +1,6 @@
 const displayFrase = document.getElementById('frasePraDigitar')
 const inputConteudo = document.getElementById('entradaTexto')
+const relogio = document.getElementById('relogio')
 
 inputConteudo.addEventListener('input', () => {
     const listaSpans = displayFrase.querySelectorAll('span')
@@ -56,7 +57,15 @@ function gerarNovaFrase() {
 gerarNovaFrase()
 
 function contagemRegressiva(x) {
-    document.getElementById('relogio').textContent=x;
+    if (x > 9) {
+        relogio.classList.add('relogioMaiorQue9')
+        relogio.classList.remove('relogioMenorQue9')
+    }
+    else {
+        relogio.classList.remove('relogioMaiorQue9')
+        relogio.classList.add('relogioMenorQue9')
+    }
+    relogio.textContent = x;
     if (x > 0) {
       setTimeout
       (function() {
