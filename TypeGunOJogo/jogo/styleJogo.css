@@ -9,7 +9,7 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 46vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -17,55 +17,63 @@ body{
 
     }
 
-.escreverTextoGeral{
-    display: flex;   
-    min-height: 100vh;
-    padding-top: 400px ;
-    gap: 30px;
-    font-size: x-large;
+.escreverTextoGeral{   
+    padding-top: 29.5% ;
+    font-size: 2.5vw;
+
 
     }
     
 
 .frasePraDigitar{
+
     position: absolute;
-    left: 278px;
+    left: 20%;
     user-select: none; 
+
 }
 
 
 textarea {
     
     position: absolute;
-    right: 290px;
+    right: 21.3%;
     background: transparent; 
-    width: 385px;
-    height: 222px;
+    width: 28%;
+    height: 35%;
     border: none;
     resize: none;
+    outline: none;
 
-
-    font-family: "Bona Nova SC", serif;
-    font-weight: 1000;
-    font-style: normal;
-    font-size: x-large;
-    outline: 0px;
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 2.5vw;
     }
 
 .relogioMenorQue9 {
-    position: absolute;
-    left: 103px;
-    top: 167px;
+    position: relative;
+    right: 41.6%;
+    top: 26%;
+    
+    
     color: black;
-    font-size: xxx-large;
+    font-size: 4.3vw;
+
+    user-select: none;
 }
 
 .relogioMaiorQue9 {
-    position: absolute;
-    left: 91px;
-    top: 167px;
+    display: flex;
+    position: relative;
+    right: 41.6%;
+    top: 26%;
+    
+    
     color: black;
-    font-size: xxx-large;
+    font-size: 4.3vw;
+
+    user-select: none;
 }
 
 .correto {
