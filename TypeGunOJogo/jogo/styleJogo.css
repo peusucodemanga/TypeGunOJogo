@@ -30,6 +30,7 @@ body{
 .frasePraDigitar{
     position: absolute;
     left: 278px;
+    user-select: none; 
 }
 
 
@@ -50,3 +51,11 @@ textarea {
     font-size: x-large;
     outline: 0px;
     }
+
+.relogio {
+    position: absolute;
+    left: 99px;
+    top: 179px;
+    color: black;
+    font-size: xxx-large;
+}
