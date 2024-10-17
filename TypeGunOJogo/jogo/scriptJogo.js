@@ -87,6 +87,4 @@ const contagemRegressiva = (x) => {
   
 contagemRegressiva(60)
 
-const alterarVida = () => {
-    vidaFilhaRestante.setAttribute("style", "width:  ")
-}
+
