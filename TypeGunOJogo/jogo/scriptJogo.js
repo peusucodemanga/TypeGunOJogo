@@ -35,11 +35,19 @@ inputConteudo.addEventListener('input', () => {
         if (listaDigitadoNoInput[listaDigitadoNoInput.length-1] !== '') {
             setTimeout(() => {
                 gerarNovaFrase(listaDeFrases);
-              }, 500);
+              }, 800);
         }
         })
     }
 })
+
+
+const coletaCorretos = () => { 
+    const corretos = document.getElementsByClassName('correto')
+}
+coletaCorretos() 
+
+
 
 const listaDeFrases = ['Depois que eu conheci o Mandela', 'Depois que eu vi como ela dança', 
     'Depois que eu vi como ela se assanha', 'Só agora que eu vim perceber', 'Namorar pra quê?',
@@ -78,3 +86,7 @@ const contagemRegressiva = (x) => {
   }
   
 contagemRegressiva(60)
+
+const alterarVida = () => {
+    vidaFilhaRestante.setAttribute("style", "width:  ")
+}
