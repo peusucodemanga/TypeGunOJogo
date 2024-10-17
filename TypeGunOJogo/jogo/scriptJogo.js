@@ -32,6 +32,11 @@ inputConteudo.addEventListener('input', () => {
             }
         acc += 1
         inputConteudo.value = null
+        if (listaDigitadoNoInput[listaDigitadoNoInput.length-1] !== '') {
+            setTimeout(() => {
+                gerarNovaFrase(listaDeFrases);
+              }, 500);
+        }
         })
     }
 })
@@ -42,8 +47,7 @@ const listaDeFrases = ['Depois que eu conheci o Mandela', 'Depois que eu vi como
 
 const sortearFrase = (max = -1, min = 7) => Math.floor(Math.random() * (max - min + 1)) + min
 
-
-function gerarNovaFrase() {
+const gerarNovaFrase = (listaDeFrases) => {
     const frase = listaDeFrases[sortearFrase()]
     displayFrase.innerHTML = ''
     frase.split(' ').map((palavra) => {
@@ -54,9 +58,10 @@ function gerarNovaFrase() {
     inputConteudo.value = null
 }
 
-gerarNovaFrase()
+gerarNovaFrase(listaDeFrases)
+console.log('iniciou')
 
-function contagemRegressiva(x) {
+const contagemRegressiva = (x) => {
     if (x > 9) {
         relogio.classList.add('relogioMaiorQue9')
         relogio.classList.remove('relogioMenorQue9')
