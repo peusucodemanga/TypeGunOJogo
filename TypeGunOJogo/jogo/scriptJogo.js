@@ -21,14 +21,17 @@ inputConteudo.addEventListener('input', () => {
             else if (listaDigitadoNoInput[acc] == '') {
                 listaSpans[acc].classList.remove('correto')
                 listaSpans[acc].classList.remove('incorreto')
+
             }
             else if (palavra === listaDigitadoNoInput[acc]) {
                 listaSpans[acc].classList.add('correto')
                 listaSpans[acc].classList.remove('incorreto')
+
             }
             else if (palavra !== listaDigitadoNoInput[acc]) {
                 listaSpans[acc].classList.add('incorreto')
                 listaSpans[acc].classList.remove('correto')
+
             }
         acc += 1
         inputConteudo.value = null
@@ -69,8 +72,8 @@ const gerarNovaFrase = (listaDeFrases) => {
 gerarNovaFrase(listaDeFrases)
 console.log('iniciou')
 
-const contagemRegressiva = (x) => {
-    if (x > 9) {
+const contagemRegressiva = (timer) => {
+    if (timer > 9) {
         relogio.classList.add('relogioMaiorQue9')
         relogio.classList.remove('relogioMenorQue9')
     }
@@ -78,13 +81,33 @@ const contagemRegressiva = (x) => {
         relogio.classList.remove('relogioMaiorQue9')
         relogio.classList.add('relogioMenorQue9')
     }
-    relogio.textContent = x;
-    if (x > 0) {
-      setTimeout
-      (function() {
-        contagemRegressiva(x - 1)}, 1000);} 
+    relogio.textContent = timer;
+    if (timer > 0) {
+      setTimeout(function(){contagemRegressiva(timer - 1)}, 1000);} 
   }
   
 contagemRegressiva(60)
+
+
+const percorreVida = (vidaTotal) =>{
+    const alterarVida = (campoPraAlterar) => {   
+        (campoPraAlterar).setAttribute("style", "width:"+ (vidaTotal) + "%")
+}
+alterarVida(vidaFilhaRestante)
+    
+    if (vidaTotal == 0) {
+    return 10
+}
+    else {   
+        return setTimeout(function(){percorreVida(vidaTotal-0.1)},10); 
+
+} 
+}
+
+
+console.log(percorreVida(100))
+
+
+
 
 
