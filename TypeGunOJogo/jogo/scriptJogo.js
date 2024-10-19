@@ -1,6 +1,24 @@
 const displayFrase = document.getElementById('frasePraDigitar')
 const inputConteudo = document.getElementById('entradaTexto')
 const relogio = document.getElementById('relogio')
+const vidaFilha = document.getElementById('vidaFilhaRestante')
+const cemPorCentoVida = parseInt(window.getComputedStyle(vidaFilha).getPropertyValue('width'))
+
+const calcularPorcentagemVida = (porcentagem) => 100*porcentagem/cemPorCentoVida
+
+const diminuirVida = () => {
+    const vidaAtual = calcularPorcentagemVida(parseInt(window.getComputedStyle(vidaFilha).getPropertyValue('width')))
+    if ((vidaAtual - 0.1) < 0)
+        vidaFilha.style.width = '0%'
+    else {
+        vidaFilha.style.width = `${vidaAtual - 0.1}%`
+    }
+}
+
+const aumentarVida = () => {
+    const vidaAtual = calcularPorcentagemVida(parseInt(window.getComputedStyle(vidaFilha).getPropertyValue('width')))
+    vidaFilha.style.width = `${vidaAtual + 3}%`
+}
 
 inputConteudo.addEventListener('input', () => {
     const listaSpans = displayFrase.querySelectorAll('span')
@@ -21,17 +39,16 @@ inputConteudo.addEventListener('input', () => {
             else if (listaDigitadoNoInput[acc] == '') {
                 listaSpans[acc].classList.remove('correto')
                 listaSpans[acc].classList.remove('incorreto')
-
             }
             else if (palavra === listaDigitadoNoInput[acc]) {
                 listaSpans[acc].classList.add('correto')
                 listaSpans[acc].classList.remove('incorreto')
-
+                aumentarVida()
             }
             else if (palavra !== listaDigitadoNoInput[acc]) {
                 listaSpans[acc].classList.add('incorreto')
                 listaSpans[acc].classList.remove('correto')
-
+                diminuirVida()
             }
         acc += 1
         inputConteudo.value = null
@@ -43,14 +60,6 @@ inputConteudo.addEventListener('input', () => {
         })
     }
 })
-
-
-const coletaCorretos = () => { 
-    const corretos = document.getElementsByClassName('correto')
-}
-coletaCorretos() 
-
-
 
 const listaDeFrases = ['Depois que eu conheci o Mandela', 'Depois que eu vi como ela dança', 
     'Depois que eu vi como ela se assanha', 'Só agora que eu vim perceber', 'Namorar pra quê?',
@@ -70,10 +79,9 @@ const gerarNovaFrase = (listaDeFrases) => {
 }
 
 gerarNovaFrase(listaDeFrases)
-console.log('iniciou')
 
-const contagemRegressiva = (timer) => {
-    if (timer > 9) {
+const contagemRegressiva = (x) => {
+    if (x > 9) {
         relogio.classList.add('relogioMaiorQue9')
         relogio.classList.remove('relogioMenorQue9')
     }
@@ -81,33 +89,19 @@ const contagemRegressiva = (timer) => {
         relogio.classList.remove('relogioMaiorQue9')
         relogio.classList.add('relogioMenorQue9')
     }
-    relogio.textContent = timer;
-    if (timer > 0) {
-      setTimeout(function(){contagemRegressiva(timer - 1)}, 1000);} 
+    relogio.textContent = x;
+    if (x > 0) {
+      setTimeout
+      (function() {
+        contagemRegressiva(x - 1)}, 1000);} 
   }
   
 contagemRegressiva(60)
 
+const percorreVida = () => {
+    setTimeout
+    (function() {
+      diminuirVida()
+      percorreVida()}, 14);}
 
-const percorreVida = (vidaTotal) =>{
-    const alterarVida = (campoPraAlterar) => {   
-        (campoPraAlterar).setAttribute("style", "width:"+ (vidaTotal) + "%")
-}
-alterarVida(vidaFilhaRestante)
-    
-    if (vidaTotal == 0) {
-    return 10
-}
-    else {   
-        return setTimeout(function(){percorreVida(vidaTotal-0.1)},10); 
-
-} 
-}
-
-
-console.log(percorreVida(100))
-
-
-
-
-
+percorreVida()
