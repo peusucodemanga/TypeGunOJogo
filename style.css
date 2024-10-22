@@ -21,6 +21,12 @@ body{
 
     background-color:transparent;
 
+}
 
-
+#botaoDeTutorial{
+    position: absolute;
+    bottom: 5%;
+    left:46%;
+    width: 10%;
+    height: 5%;
 }
