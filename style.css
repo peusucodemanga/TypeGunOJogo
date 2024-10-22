@@ -1,14 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
 body{
-    background-image: url('/images/papelpa.png');
+    background-image: url('/images/papeldeparede.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 90vh;
 }
-button{
-    position: relative;
-    top: 380px;
-    left:590px;
-    background-color: #9c9c9c; 
-    color: rgb(0, 0, 0);
+.botao{
+    position: absolute;
+    top: 66%;
+    left:43.6%;
+    width: 15.7%;
+    height:10%;
+
+    background-color:transparent;
+
+
+
 }
