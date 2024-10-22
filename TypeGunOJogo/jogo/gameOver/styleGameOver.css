@@ -1,0 +1,41 @@
+*{  margin: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    }
+
+body{
+    background-image: url('/TypeGunOJogo/jogo/gameOver/backgroundimgGO.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+
+}
+
+
+.caixaDeDados{
+    position: absolute;
+    left: 37%;
+    top:30%;
+    
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 2vw;
+}
+
+.botaoTentar{
+    position: absolute;
+    top: 63%;
+    left: 37.8%;
+    width: 24.2%;
+    height: 7%;
+    background-color: transparent;
+    mix-blend-mode: multiply;
+}
