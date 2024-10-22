@@ -64,45 +64,50 @@ inputConteudo.addEventListener('input', () => {   // sempre que algo for digitad
     const listaPalavrasDaFrase = displayFrase.innerText.split(' ')
     // listaPalavrasDaFrase receberá uma lista com todas as palavras da frase a ser digitada
     const listaDigitadoNoInput = listaPalavrasDaFrase.map((x) => '')
-    /* listaDigitadoNoInput será uma lista com o mesmo número de caracteres que a quantidade de palavras total a serem digitadas,
+    /* listaDigitadoNoInput será uma lista com o mesmo número de elementos que a quantidade de palavras total a serem digitadas,
     mas todos os caracteres serão vazios */
     const digitadoNoInputPalavras = (inputConteudo.value.split(' ')).filter((x) => x !== '')
-    // digitadoNoInputPalavras será uma lista em que as palavras já digitadas serão
+    // digitadoNoInputPalavras será uma lista em que as palavras digitadas formarão cada elemento da lista
     digitadoNoInputPalavras.map((palavra, acc) => {
-        listaDigitadoNoInput[acc] = palavra
+        listaDigitadoNoInput[acc] = palavra 
         acc += 1
     })
-    if (digitadoNoInput[digitadoNoInput.length-1] == ' ') {
-        listaPalavrasDaFrase.map((palavra, acc) => {
-            const temClasse = listaSpans[acc].className
-            if (temClasse !== '') {
-                listaDigitadoNoInput[acc+1] = listaDigitadoNoInput[acc]
+    if (digitadoNoInput[digitadoNoInput.length-1] == ' ') { // se o último caractere digitado no input for espaço:
+        listaPalavrasDaFrase.map((palavra, acc) => { // pra cada palavra da frase
+            const temClasse = listaSpans[acc].className // descobre se o respectivo span tem alguma classe css
+            if (temClasse !== '') { // se tiver classe css
+                listaDigitadoNoInput[acc+1] = listaDigitadoNoInput[acc] /* o próximo elemento de listaDigitadoNoInput vai receber 
+                o elemento anterior*/
             }
-            else if (listaDigitadoNoInput[acc] == '') {
+            else if (listaDigitadoNoInput[acc] == '') { /* caso o anterior não aconteça e caso tal elemento de listaDigitadoNoInput
+                estiver vazio*/
                 listaSpans[acc].classList.remove('correto')
                 listaSpans[acc].classList.remove('incorreto')
+                // vai remover qualquer classe css que o respectivo span tiver
             }
             else if (palavra === listaDigitadoNoInput[acc]) {
                 listaSpans[acc].classList.add('correto')
                 listaSpans[acc].classList.remove('incorreto')
                 aumentarVida()
                 listaDeDados['palavrasAcertadas'] += 1
+                // se a palavra em questão for igual a que ela está comparando, a vida auemntará e a palavra ficará verde
             }
             else if (palavra !== listaDigitadoNoInput[acc]) {
                 listaSpans[acc].classList.add('incorreto')
                 listaSpans[acc].classList.remove('correto')
                 diminuirVida()
                 listaDeDados['palavrasErradas'] += 1
+                // se não for igual, a vida diminui um pouco e a palavra fica errada
             }
         acc += 1
-        inputConteudo.value = null
+        inputConteudo.value = null // remove o que quer que esteja escrito no input
         if (listaDigitadoNoInput[listaDigitadoNoInput.length-1] !== '') {
             setTimeout(() => {
-                console.log('frase concluída')
                 listaDeDados['frasesConcluídas'] += 1
                 gerarNovaFrase(listaDeFrases)
               }, 400);
         }
+        // se o últio elemento não estiver vazio, ou seja, a frase foi completa, gere uma nova frase
         })
     }
 })
