@@ -51,7 +51,7 @@ const diminuirVida = () => {
 
 const aumentarVida = () => {
     const vidaAtual = calcularPorcentagemVida(parseInt(window.getComputedStyle(vidaFilha).getPropertyValue('width')))
-    vidaFilha.style.width = `${vidaAtual + 7}%`
+    vidaFilha.style.width = `${vidaAtual + 8}%`
 }
 // quando essa função é chamada, a barra de vida receberá um acréscimo.
 
