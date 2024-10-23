@@ -5,7 +5,7 @@
     }
 
 body{
-    background-image: url('/TypeGunOJogo/jogo/gameOver/backgroundimgGO.png');
+    background-image: url('./backgroundimgGO.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
