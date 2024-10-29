@@ -10,7 +10,19 @@ const cemPorCentoVida = parseInt(window.getComputedStyle(vidaFilha).getPropertyV
 // será importante definir qual é o valor, em pixels, que representa 100% da vida, a vida cheia
 const listaDeDados = {'ganhou?': 'sim', 'tempoSobrevivido': 0, 'palavrasAcertadas': 0, 'palavrasErradas': 0, 'frasesConcluídas': 0}
 // listaDeDados armazenará todas as pontuações do jogo
+const barulhoDeTiro = new Audio('./images/barulhoDeTiro.mp3');
+const rodarBarulhoDeTiro = () => {
+    barulhoDeTiro.volume=0.5;
+    barulhoDeTiro.play()
+}
 
+const musicaDeFundo = new Audio('./images/musicaFundo-Kevin MacLeod - 8bit Dungeon Boss.mp3')
+const rodarMusicaDeFundo = () =>{
+    musicaDeFundo.volume=0.4
+    musicaDeFundo.play()
+
+}
+rodarMusicaDeFundo()
 
 const calcularPorcentagemVida = (porcentagem) => 100*porcentagem/cemPorCentoVida
 //serve para calcular qual porcentagem da barra de vida o valor em pixels representa
@@ -90,6 +102,7 @@ inputConteudo.addEventListener('input', () => {   // sempre que algo for digitad
                 listaSpans[acc].classList.remove('incorreto')
                 aumentarVida()
                 listaDeDados['palavrasAcertadas'] += 1
+                rodarBarulhoDeTiro()
                 // se a palavra em questão for igual a que ela está comparando, a vida auemntará e a palavra ficará verde
             }
             else if (palavra !== listaDigitadoNoInput[acc]) {
