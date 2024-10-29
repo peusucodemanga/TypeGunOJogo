@@ -12,13 +12,16 @@ const listaDeDados = {'ganhou?': 'sim', 'tempoSobrevivido': 0, 'palavrasAcertada
 // listaDeDados armazenará todas as pontuações do jogo
 const barulhoDeTiro = new Audio('./images/barulhoDeTiro.mp3');
 const rodarBarulhoDeTiro = () => {
-    barulhoDeTiro.volume=0.5;
-    barulhoDeTiro.play()
+    if (barulhoDeTiro.paused) {
+        barulhoDeTiro.play();
+    }else{
+        barulhoDeTiro.currentTime = 0
+    }
 }
 
-const musicaDeFundo = new Audio('./images/musicaFundo-Kevin MacLeod - 8bit Dungeon Boss.mp3')
+const musicaDeFundo = new Audio('./images/musicaFundo-KevinMacLeod-8bitDungeonBoss.mp3')
 const rodarMusicaDeFundo = () =>{
-    musicaDeFundo.volume=0.4
+    musicaDeFundo.volume=0.5
     musicaDeFundo.play()
 
 }
