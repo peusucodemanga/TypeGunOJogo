@@ -19,7 +19,7 @@ const rodarBarulhoDeTiro = () => {
     }
 }
 
-const musicaDeFundo = new Audio('./images/musicaFundo-KevinMacLeod-8bitDungeonBoss.mp3')
+const musicaDeFundo = new Audio('./images/Kevin MacLeod - 8bit Dungeon Boss.mp3')
 const rodarMusicaDeFundo = () =>{
     musicaDeFundo.volume=0.5
     musicaDeFundo.play()
