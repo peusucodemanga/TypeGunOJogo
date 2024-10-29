@@ -20,10 +20,9 @@ const rodarBarulhoDeTiro = () => {
 }
 
 const musicaDeFundo = new Audio('./images/Kevin MacLeod - 8bit Dungeon Boss.mp3')
-const rodarMusicaDeFundo = () =>{
-    musicaDeFundo.volume=0.5
-    musicaDeFundo.play()
 
+const rodarMusicaDeFundo = () => {
+    musicaDeFundo.play()
 }
 rodarMusicaDeFundo()
 
@@ -83,6 +82,13 @@ inputConteudo.addEventListener('input', () => {   // sempre que algo for digitad
     mas todos os caracteres serão vazios */
     const digitadoNoInputPalavras = (inputConteudo.value.split(' ')).filter((x) => x !== '')
     // digitadoNoInputPalavras será uma lista em que as palavras digitadas formarão cada elemento da lista
+    inputConteudo.addEventListener('keypress', function(tecla) {
+        if (tecla.keyCode === 13 || tecla.which === 13) {
+            tecla.preventDefault();
+            return false;
+        }
+    })
+    //função pra prevenir o player de apertar enter sem querer e bugar o checador de correto/falso
     digitadoNoInputPalavras.map((palavra, acc) => {
         listaDigitadoNoInput[acc] = palavra 
         acc += 1
