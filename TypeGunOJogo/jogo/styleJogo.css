@@ -109,15 +109,3 @@ textarea {
     max-width: 100%;
 
 }
-.monstro{
-    position: absolute;
-    right:10%;
-    width: 30%;
-    top: 14%;
-}
-
-.filha{
-    position: absolute;
-    width: 25%;
-    left: 10%;
-}
