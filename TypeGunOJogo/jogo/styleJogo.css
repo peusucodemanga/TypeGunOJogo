@@ -6,7 +6,7 @@ overflow-x: hidden;
 }
 
 body{
-    background-image: url('./images/backJogo.png');
+    background-image: url('./images/backgroundJogo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
